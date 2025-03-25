@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>给[TA的名字]的一封信</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: url('https://example.com/bg.jpg') no-repeat center/cover;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: '楷体', cursive;
+        }
+        .letter {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .heart {
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter">
+        <h1>❤️ 致我最爱的[TA的名字] ❤️</h1>
+        <p>亲爱的[TA的名字]：</p>
+        <p>从遇见你的那天起，我的世界开始有了颜色...</p>
+        <!-- 这里写下你的告白内容 -->
+        <p class="heart">❤️ 你愿意和我一起书写未来的故事吗？ ❤️</p>
+    </div>
+    
+    <!-- 添加背景音乐 -->
+    <audio autoplay loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
