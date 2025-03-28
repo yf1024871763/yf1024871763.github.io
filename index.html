@@ -20,12 +20,31 @@
         }
         .heart {
             color: #ff4081;
-            
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #e91e63;
+            font-weight: bold;
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+        }    
         }
         @keyframes heartbeat {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
+        }
+        /* 新增花瓣雨效果 */
+        .petal {
+            position: fixed;
+            opacity: 0.7;
+            animation: fall linear infinite;
+            z-index: -1;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
         }
     </style>
 </head>
@@ -39,8 +58,28 @@
             最让我感触深刻的是你和我打电话，哭着和我说把精力花费在你身上对我不公平，让我觉得你真的特别在意我的感受，我特别感动，但是你对我来说是特别的存在，没有任何人可以替代，我永远会坚定的选择你和站在你这边。</p>
          <p>异地恋可能确实是比较难熬的事情，但是我觉得真爱克服一切，让我更难过的是想到如果没有你的日子，我和你虽然一直在线上交流，但是我挺开心的。在你出现之前，其实我的生活看似很美好和充实，但是我总是感觉自己
         不开心，我好像在极力地证明我过的很好，我也总觉得我很孤独，怀疑为什么我遇不到一个灵魂伴侣，不过现在我要感谢你的出现，我现在不管做什么事情都觉得内心很踏实和开心，我总觉得在这个世界上还有一个人在等我，你已经成为我生命的一个支点。我觉得我们两个的相遇是概率极小的事情，相信未来，我们总能找到解决各种困难的方法。</p>
+         <div class="signature">
+            <p>爱你的佳佳<span class="heart">❤️</span></p>
+            <p>张毓夫</p>
+            <p>2025年3月28日</p>
+        </div>
     </div>
-    
+    <script>
+        function createPetals() {
+            const petalEmojis = ['🌸', '🍃', '🌺', '💮'];
+            for(let i = 0; i < 20; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.innerHTML = petalEmojis[Math.floor(Math.random()*petalEmojis.length)];
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                petal.style.animationDelay = Math.random() * 5 + 's';
+                petal.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                document.body.appendChild(petal);
+            }
+        }
+        createPetals();
+    </script>
     <!-- 添加背景音乐 -->
     <audio autoplay loop>
         <source src="bgm.mp3" type="audio/mpeg">
